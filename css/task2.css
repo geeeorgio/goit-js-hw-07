@@ -1,0 +1,20 @@
+.gallery-container {
+    max-width: 1440px;
+    padding: 100px 156px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 48px 24px;
+}
+
+.gallery-item {
+    width: calc((100% - 48px) / 3);
+    aspect-ratio: 6 / 5;
+}
+
+.gallery-img {
+    object-fit: cover;
+}
