@@ -25,16 +25,15 @@ const images = [
   },
 ];
 
+const galleryList = document.querySelector('.gallery');
+galleryList.remove();
+
 const createMarkup = (elementTag, className) => {
   const el = document.createElement(elementTag);
   el.classList.add(className);
   return el;
 };
-
-const galleryContainer = createMarkup('div', 'gallery-container');
-const galleryList = document.querySelector('.gallery');
-galleryContainer.appendChild(galleryList);
-document.body.append(galleryContainer);
+export { createMarkup };
 
 const galleryItems = images.map(({ url, alt }) => {
   const li = createMarkup('li', 'gallery-item');
@@ -47,3 +46,8 @@ const galleryItems = images.map(({ url, alt }) => {
 });
 
 galleryList.append(...galleryItems);
+
+const galleryContainer = createMarkup('div', 'gallery-container');
+galleryContainer.appendChild(galleryList);
+
+document.body.append(galleryContainer);

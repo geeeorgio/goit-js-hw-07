@@ -23,6 +23,8 @@ body {
   background-color: #fff;
   color: #2e2f42;
   line-height: 1.5;
+
+  transition: background-color 444ms ease-in-out;
 }
 
 h1,

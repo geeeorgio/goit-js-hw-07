@@ -1,0 +1,26 @@
+.input-container {
+    max-width: 408px;
+    padding: 24px;
+}
+
+#name-input {
+    margin-bottom: 16px;
+    width: 100%;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    height: 40px;
+    padding: 8px 0 8px 16px;
+}
+
+#name-input::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+}
+
+.input-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+}
