@@ -1,9 +1,6 @@
-.gallery-container {
+.gallery {
     max-width: 1440px;
     padding: 100px 156px;
-}
-
-.gallery {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

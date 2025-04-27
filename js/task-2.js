@@ -26,28 +26,40 @@ const images = [
 ];
 
 const galleryList = document.querySelector('.gallery');
-galleryList.remove();
 
-const createMarkup = (elementTag, className) => {
-  const el = document.createElement(elementTag);
-  el.classList.add(className);
-  return el;
-};
-export { createMarkup };
+function renderImage({ url, alt }) {
+  return `<li class='gallery-item'>
+              <img class='gallery-img'
+                  src=${url}
+                  alt=${alt}
+                  >
+              </li>`;
+}
 
-const galleryItems = images.map(({ url, alt }) => {
-  const li = createMarkup('li', 'gallery-item');
-  const img = createMarkup('img', 'gallery-img');
-  img.src = url;
-  img.alt = alt;
-  li.appendChild(img);
+function renderImages(elements) {
+  return elements.map(renderImage).join('');
+}
 
-  return li;
-});
+const galleryItems = renderImages(images);
 
-galleryList.append(...galleryItems);
+galleryList.insertAdjacentHTML('afterbegin', galleryItems);
 
-const galleryContainer = createMarkup('div', 'gallery-container');
-galleryContainer.appendChild(galleryList);
+// ====================================================
+//
+// const createMarkup = (elementTag, className) => {
+//   const el = document.createElement(elementTag);
+//   el.classList.add(className);
+//   return el;
+// };
 
-document.body.append(galleryContainer);
+// const galleryItems = images.map(({ url, alt }) => {
+//   const li = createMarkup('li', 'gallery-item');
+//   const img = createMarkup('img', 'gallery-img');
+//   img.src = url;
+//   img.alt = alt;
+//   li.appendChild(img);
+
+//   return li;
+// });
+
+// galleryList.append(...galleryItems);
